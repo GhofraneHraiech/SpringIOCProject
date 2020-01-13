@@ -5,10 +5,19 @@
  */
 package org.exemple.gestioncouverture.dal;
 
+import org.exemple.gestioncouverture.model.Couverture;
+
+import java.util.List;
+
 /**
  *
  * @author ghofrane
  */
 public interface CouvertureDAL {
-    
+    void addCouverture(Couverture couverture);
+
+    List<Couverture> getAllCouverture();
+
+    Couverture findCouvertureByCouvertureName(String couvertureName);
+
 }

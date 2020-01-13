@@ -8,28 +8,29 @@ package org.exemple.gestioncouverture.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
 
 /**
  *
  * @author ghofrane
  */
-@Entity
-@Table(name = "CommandePressing")
+@Document
 public class CommandePressing implements Serializable {
     @Id
-    @GeneratedValue( strategy = GenerationType.AUTO)
+@Field(value = "id")
     private long id;
-    @Temporal(javax.persistence.TemporalType.DATE)
+    @Field(value = "dateEnvoi")
     private Date dateEnvoi;
-    @Temporal(javax.persistence.TemporalType.DATE)
+    @Field(value = "dateRetour")
     private Date dateRetour;
+    @Field(value = "idMagasin")
+
     private long idMagasin;
+    @Field(value = "etat")
+
     private String etat;
 
     public long getId() {

@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UserDALImp implements UserDAL {
 
-    private final UserRepository userRepository
+    private final UserRepository userRepository;
 
     @Autowired
     public UserDALImp(UserRepository userRepository) {
@@ -33,17 +33,14 @@ public class UserDALImp implements UserDAL {
 
     @Override
     public List<User> getAllUser() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+            return userRepository.findAll();    }
 
     @Override
     public User findUserByUserName(String userName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+return userRepository.findUtilisateurByUserName(userName);    }
 
     @Override
     public void saveUser(User user) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+userRepository.save(user);    }
 
 }

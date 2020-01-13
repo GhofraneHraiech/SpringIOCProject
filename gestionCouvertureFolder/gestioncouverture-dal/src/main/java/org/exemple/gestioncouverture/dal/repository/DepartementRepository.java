@@ -6,12 +6,13 @@
 package org.exemple.gestioncouverture.dal.repository;
 
 import org.exemple.gestioncouverture.model.Departement;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author ghofrane
  */
-public interface DpartementRepository {
+public interface DepartementRepository extends JpaRepository<Departement,Long> {
            Departement findUtilisateurByUserName(String fisrtName);
 
 }

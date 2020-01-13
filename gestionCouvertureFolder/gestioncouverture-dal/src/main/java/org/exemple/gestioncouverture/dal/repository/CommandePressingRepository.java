@@ -6,13 +6,14 @@
 package org.exemple.gestioncouverture.dal.repository;
 
 import org.exemple.gestioncouverture.model.CommandePressing;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  *
  * @author ghofrane
  */
-public interface CommandePressingRepository {
-            CommandePressing findUtilisateurById(long id);
+public interface CommandePressingRepository extends MongoRepository<CommandePressing,Long> {
+            CommandePressing findCommandePressingByCommandePressingRepositoryName(String name);
 
     
 }

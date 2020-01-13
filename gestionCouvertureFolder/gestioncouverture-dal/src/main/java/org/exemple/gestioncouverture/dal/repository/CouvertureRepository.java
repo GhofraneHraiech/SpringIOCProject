@@ -13,6 +13,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author ghofrane
  */
 public interface CouvertureRepository extends JpaRepository <Couverture, Long>{
-               Couverture findUtilisateurById(Long id);
+               Couverture findUtilisateurByCouvertureName(String couvertureName);
 
 }
